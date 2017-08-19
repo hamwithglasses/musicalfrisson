@@ -1,0 +1,34 @@
+include ../toolkit/_toolkit.pug
+
+-
+	base.index = false; //index robots
+	base.ver = '?v=1.0'; //versioning assets
+	base.url = ''; //url used for dist/deploy
+	
+	base.name = 'Base'; //name of site
+	base.title = 'Base Title'; //default title
+	base.description = 'Flat file Pug site.'; //default description
+	
+	if(base.dev == true) {
+		base.url = 'http://localhost:3000';
+	}
+
+block vars
+
+doctype
+html(lang="en")
+	head
+		+head()
+
+		link(rel="icon" href=base.url + "/assets/img/favicon.png")
+		
+		+css(base.url + '/assets/css/main.min.css' + base.ver)
+		
+		block head
+	body
+		block body
+		
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+		script(src=base.url + '/assets/js/main.min.js' + base.ver)
+		
+		block scripts
