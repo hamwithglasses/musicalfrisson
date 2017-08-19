@@ -7,7 +7,7 @@ block head
 	
 block body
 	|Testing compile.
-	form(name="contact" netlify netlify-honeypot="bot-field" hidden)
+	form(name="contact" method="post" netlify)
 		p
 			label Name
 			input(type="text" name="name")
