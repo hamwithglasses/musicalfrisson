@@ -1,9 +1,21 @@
 extends templates/_base.pug
 
 block vars
-	- base.title = 'Custom Title'
+	- base.title = 'Mussical Frisson'
 
 block head
 	
 block body
 	|Testing compile.
+	form(name="contact" action="thank-you" netifly)
+		p
+			label Name
+			input(type="text" name="name")
+		p
+			label Email
+			input(type="email" name="email")
+		p
+			label Message
+			textarea(name="message")
+		p
+			button(type="submit") Send
